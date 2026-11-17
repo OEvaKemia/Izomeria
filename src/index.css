@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Chakra Petch', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #080d16;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle lab blueprint grid backdrop */
+.lab-grid-bg {
+  background-color: #080d16;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(6, 182, 212, 0.12), transparent 65%),
+    linear-gradient(to right, rgba(30, 41, 59, 0.28) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.28) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Touch-friendly canvas container */
+.canvas-touch-surface {
+  touch-action: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
